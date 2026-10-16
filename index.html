@@ -140,51 +140,49 @@ footer{border-top:1px solid var(--line);padding:28px 18px;color:var(--muted)}.fo
 .source-box a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.35;text-decoration:none;color:var(--ink)}.source-box a:last-child{border-bottom:0}.source-box a:hover{text-decoration:underline}
 .country-example{padding:9px 0;border-bottom:1px solid var(--line);display:grid;gap:3px}.country-example:last-child{border-bottom:0}.country-example b{font-size:12px}.country-example span{font-size:12px;line-height:1.4;color:var(--muted)}
 
-.topic-actions{display:flex;justify-content:flex-end;gap:8px;margin:0 0 14px}
-.print-topic{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:8px 11px;font:700 .72rem/1 "Space Grotesk",sans-serif;letter-spacing:.03em;cursor:pointer;transition:.18s}
-.print-topic:hover{border-color:var(--mint);transform:translateY(-1px)}
+.module-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
 @media print{
   @page{size:A4;margin:14mm}
   html,body{background:#fff!important;color:#111!important}
-  body.printing-topic .header,
-  body.printing-topic .scrollbar,
-  body.printing-topic footer,
-  body.printing-topic .top,
-  body.printing-topic .back,
-  body.printing-topic .module-tabs,
-  body.printing-topic .module-hero,
-  body.printing-topic .activity-wrap{display:none!important}
-  body.printing-topic #app,
-  body.printing-topic .topic-page,
-  body.printing-topic .topic-list{display:block!important;margin:0!important;padding:0!important;max-width:none!important;width:100%!important}
-  body.printing-topic .topic{display:none!important}
-  body.printing-topic .topic.print-target{display:block!important;border:0!important;box-shadow:none!important;background:#fff!important;color:#111!important;margin:0!important}
-  body.printing-topic .topic.print-target>summary{display:flex!important;padding:0 0 12px!important;border-bottom:2px solid #111!important;color:#111!important;list-style:none!important}
-  body.printing-topic .topic.print-target>summary .chev{display:none!important}
-  body.printing-topic .topic.print-target .topic-num{color:#444!important}
-  body.printing-topic .topic.print-target .topic-title{color:#111!important;font-size:20pt!important}
-  body.printing-topic .topic.print-target .topic-body{display:block!important;padding:14px 0 0!important}
-  body.printing-topic .topic.print-target .reading,
-  body.printing-topic .topic.print-target .side{display:block!important;width:100%!important;max-width:none!important}
-  body.printing-topic .topic.print-target .side{margin-top:16px!important}
-  body.printing-topic .topic.print-target p,
-  body.printing-topic .topic.print-target li,
-  body.printing-topic .topic.print-target span,
-  body.printing-topic .topic.print-target b,
-  body.printing-topic .topic.print-target strong,
-  body.printing-topic .topic.print-target .label{color:#111!important}
-  body.printing-topic .topic.print-target .info,
-  body.printing-topic .topic.print-target .snapshot,
-  body.printing-topic .topic.print-target .example,
-  body.printing-topic .topic.print-target .skill-frame,
-  body.printing-topic .topic.print-target .term,
-  body.printing-topic .topic.print-target .country-example{background:#fff!important;color:#111!important;border-color:#bbb!important;box-shadow:none!important;break-inside:avoid}
-  body.printing-topic .topic.print-target a{color:#111!important;text-decoration:none!important}
-  body.printing-topic .topic.print-target .source-box a::after{content:" — " attr(href);font-weight:400;font-size:8pt;overflow-wrap:anywhere}
-  body.printing-topic .print-topic,
-  body.printing-topic .topic-actions,
-  body.printing-topic .reveal{display:none!important}
-  body.printing-topic .answer{display:block!important}
+  body.printing-module .header,
+  body.printing-module .scrollbar,
+  body.printing-module footer,
+  body.printing-module .top,
+  body.printing-module .back,
+  body.printing-module .module-tabs,
+  body.printing-module .activity-wrap,
+  body.printing-module .module-actions{display:none!important}
+  body.printing-module #app,
+  body.printing-module .topic-page,
+  body.printing-module .topic-list{display:block!important;margin:0!important;padding:0!important;max-width:none!important;width:100%!important}
+  body.printing-module .module-hero{display:block!important;background:#fff!important;color:#111!important;border:0!important;padding:0 0 12px!important;margin:0 0 18px!important}
+  body.printing-module .module-big-code{color:#444!important}
+  body.printing-module .module-hero h1,
+  body.printing-module .module-hero p,
+  body.printing-module .module-hero .eyebrow{color:#111!important}
+  body.printing-module .topic{display:block!important;border:0!important;border-top:1px solid #bbb!important;box-shadow:none!important;background:#fff!important;color:#111!important;margin:0!important;break-inside:auto}
+  body.printing-module .topic>summary{display:flex!important;padding:12px 0 8px!important;color:#111!important;list-style:none!important}
+  body.printing-module .topic>summary .chev{display:none!important}
+  body.printing-module .topic-title{color:#111!important}
+  body.printing-module .topic-body{display:block!important;padding:0 0 18px!important}
+  body.printing-module .reading,
+  body.printing-module .side{display:block!important;width:100%!important;max-width:none!important}
+  body.printing-module .side{margin-top:12px!important}
+  body.printing-module p,
+  body.printing-module span,
+  body.printing-module b,
+  body.printing-module strong,
+  body.printing-module .label{color:#111!important}
+  body.printing-module .info,
+  body.printing-module .snapshot,
+  body.printing-module .example,
+  body.printing-module .skill-frame,
+  body.printing-module .term,
+  body.printing-module .country-example{background:#fff!important;color:#111!important;border-color:#bbb!important;box-shadow:none!important;break-inside:avoid}
+  body.printing-module .source-box a{color:#111!important;text-decoration:none!important}
+  body.printing-module .source-box a::after{content:" — " attr(href);font-weight:400;font-size:8pt;overflow-wrap:anywhere}
+  body.printing-module .reveal{display:none!important}
+  body.printing-module .answer{display:block!important}
 }
 </style>
 </head>
@@ -266,32 +264,33 @@ function topicHTML(t){
  const refs=(t.sources||[]).length?'<div class="info source-box"><div class="label">Evidence & further reading</div>'+t.sources.map(x=>'<a href="'+esc(x[1])+'" target="_blank" rel="noopener">'+esc(x[0])+' ↗</a>').join("")+'</div>':"";
  const check=t.q&&t.a?'<div class="info green"><div class="label">Quick check</div><div class="check-question">'+esc(t.q)+'</div><button class="reveal" data-answer="'+t.id+'">Reveal answer</button><div class="answer" id="answer'+t.id+'">'+esc(t.a)+'</div></div>':"";
  const tip=t.article?'<div class="skill-frame"><b>Exam connection:</b> Use evidence from the article, explain the link between places, then judge both benefits and costs where relevant.</div>':'<div class="skill-frame"><b>Writing tip:</b> If a question says <em>explain</em>, use: Point → how/why → example.</div>';
- return '<details class="topic" data-id="'+t.id+'"><summary><span class="topic-num">'+String(t.id).padStart(2,"0")+'</span><span class="topic-title">'+esc(t.title)+'</span><span class="chev">⌄</span></summary><div class="topic-body"><div class="topic-actions"><button class="print-topic" type="button" data-print-topic="'+t.id+'" aria-label="Print '+esc(t.title)+' or save it as PDF">Print / Save as PDF</button></div><div class="reading"><div class="eyebrow">'+label+'</div><p><b>'+esc(t.lead)+'</b></p>'+snap+paras+ex+tip+'</div><aside class="side"><div class="info"><div class="label">Key words</div>'+terms+'</div>'+country+refs+check+'</aside></div></details>'
+ return '<details class="topic" data-id="'+t.id+'"><summary><span class="topic-num">'+String(t.id).padStart(2,"0")+'</span><span class="topic-title">'+esc(t.title)+'</span><span class="chev">⌄</span></summary><div class="topic-body"><div class="reading"><div class="eyebrow">'+label+'</div><p><b>'+esc(t.lead)+'</b></p>'+snap+paras+ex+tip+'</div><aside class="side"><div class="info"><div class="label">Key words</div>'+terms+'</div>'+country+refs+check+'</aside></div></details>'
 }
 function showModule(id){
  currentModule=id;search.value="";
  const m=moduleOf(id),topics=TOPICS.filter(t=>t.module===id);
- app.innerHTML='<main class="topic-page"><button class="back" id="back">← Back to overview</button>'+tabs(id)+'<section class="module-hero"><div class="module-big-code">'+m.code+'</div><div><div class="eyebrow">'+topics.length+' topics · '+progress(m)+'% explored</div><h1>'+esc(m.title)+'</h1><p>'+esc(m.desc)+'</p></div></section>'+activityFor(id)+'<div class="topic-list">'+topics.map(topicHTML).join("")+'</div></main>';
- document.getElementById("back").onclick=home;document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>showModule(b.dataset.tab));wireTopics();wireActivity(id);revealCards()
+ app.innerHTML='<main class="topic-page"><button class="back" id="back">← Back to overview</button>'+tabs(id)+'<section class="module-hero"><div class="module-big-code">'+m.code+'</div><div><div class="eyebrow">'+topics.length+' topics · '+progress(m)+'% explored</div><h1>'+esc(m.title)+'</h1><p>'+esc(m.desc)+'</p><div class="module-actions"><button class="btn alt" id="printModule">Print / Save subsection as PDF</button></div></div></section>'+activityFor(id)+'<div class="topic-list">'+topics.map(topicHTML).join("")+'</div></main>';
+ document.getElementById("back").onclick=home;
+ document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>showModule(b.dataset.tab));
+ document.getElementById("printModule").onclick=()=>printModule(id);
+ wireTopics();wireActivity(id);revealCards()
 }
-function wireTopics(){
- document.querySelectorAll(".topic").forEach(d=>d.addEventListener("toggle",()=>{if(d.open){seen.add(+d.dataset.id);save()}}));
- document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>document.getElementById("answer"+b.dataset.answer).classList.toggle("show"));
- document.querySelectorAll("[data-print-topic]").forEach(b=>b.onclick=e=>{
-   e.preventDefault();e.stopPropagation();
-   const d=document.querySelector('.topic[data-id="'+b.dataset.printTopic+'"]');
-   if(!d)return;
-   d.open=true;
-   document.querySelectorAll(".topic.print-target").forEach(x=>x.classList.remove("print-target"));
-   d.classList.add("print-target");
-   document.body.classList.add("printing-topic");
-   setTimeout(()=>window.print(),40);
- })
+function printModule(id){
+ const m=moduleOf(id);
+ if(!m)return;
+ document.body.classList.add("printing-module");
+ document.querySelectorAll(".topic").forEach(d=>{d.open=true});
+ document.body.dataset.printModule=id;
+ setTimeout(()=>window.print(),60)
 }
 window.addEventListener("afterprint",()=>{
- document.body.classList.remove("printing-topic");
- document.querySelectorAll(".topic.print-target").forEach(x=>x.classList.remove("print-target"))
+ document.body.classList.remove("printing-module");
+ delete document.body.dataset.printModule
 });
+function wireTopics(){
+ document.querySelectorAll(".topic").forEach(d=>d.addEventListener("toggle",()=>{if(d.open){seen.add(+d.dataset.id);save()}}));
+ document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>document.getElementById("answer"+b.dataset.answer).classList.toggle("show"))
+}
 function openTopic(id){const t=TOPICS.find(x=>x.id===+id);if(!t)return;showModule(t.module);setTimeout(()=>{const d=document.querySelector('.topic[data-id="'+id+'"]');if(d){d.open=true;seen.add(+id);save();d.scrollIntoView({behavior:"smooth",block:"center"})}},70)}
 
 function activityFor(id){
