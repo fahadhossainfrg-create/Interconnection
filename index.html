@@ -277,7 +277,7 @@ function showModule(id){
  document.getElementById("back").onclick=home;
  document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>showModule(b.dataset.tab));
  document.getElementById("printModule").onclick=()=>printModule(id);
- wireTopics();wireActivity(id);revealCards()
+ wireTopics();removeLegacyTopicPrintControls();wireActivity(id);revealCards()
 }
 function printModule(id){
  const m=moduleOf(id);
@@ -291,6 +291,11 @@ window.addEventListener("afterprint",()=>{
  document.body.classList.remove("printing-module");
  delete document.body.dataset.printModule
 });
+// legacy-topic-print-cleanup-v2
+function removeLegacyTopicPrintControls(){
+ document.querySelectorAll("[data-print-topic],.print-topic,.topic-actions").forEach(x=>x.remove())
+}
+window.addEventListener("pageshow",removeLegacyTopicPrintControls);
 function wireTopics(){
  document.querySelectorAll(".topic").forEach(d=>d.addEventListener("toggle",()=>{if(d.open){seen.add(+d.dataset.id);save()}}));
  document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>document.getElementById("answer"+b.dataset.answer).classList.toggle("show"))
@@ -392,5 +397,6 @@ function themeLabel(){theme.textContent=document.documentElement.dataset.theme==
 theme.onclick=()=>{document.documentElement.dataset.theme=document.documentElement.dataset.theme==="dark"?"light":"dark";localStorage.setItem("ic_theme",document.documentElement.dataset.theme);themeLabel()};
 themeLabel();updateProgress();home();
 </script>
+<!-- build: 2026-10-16-pdf-layout-v2 -->
 </body>
 </html>
