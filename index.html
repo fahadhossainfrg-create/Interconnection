@@ -140,7 +140,12 @@ footer{border-top:1px solid var(--line);padding:28px 18px;color:var(--muted)}.fo
 .source-box a{display:block;padding:8px 0;border-bottom:1px solid var(--line);font-size:12px;line-height:1.35;text-decoration:none;color:var(--ink)}.source-box a:last-child{border-bottom:0}.source-box a:hover{text-decoration:underline}
 .country-example{padding:9px 0;border-bottom:1px solid var(--line);display:grid;gap:3px}.country-example:last-child{border-bottom:0}.country-example b{font-size:12px}.country-example span{font-size:12px;line-height:1.4;color:var(--muted)}
 
-.module-actions{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+
+.page-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px;min-height:34px}
+.page-toolbar .back{margin-bottom:0}
+.pdf-tool{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:var(--mint);border-radius:7px;padding:7px 11px;font:700 .76rem/1 "Space Grotesk",sans-serif;letter-spacing:.06em;cursor:pointer;transition:.18s}
+.pdf-tool:hover{border-color:var(--mint);background:var(--surface2);transform:translateY(-1px)}
+@media(max-width:620px){.page-toolbar{margin-bottom:2px}.pdf-tool{padding:7px 9px;font-size:.72rem}}
 @media print{
   @page{size:A4;margin:14mm}
   html,body{background:#fff!important;color:#111!important}
@@ -148,11 +153,10 @@ footer{border-top:1px solid var(--line);padding:28px 18px;color:var(--muted)}.fo
   body.printing-module .scrollbar,
   body.printing-module footer,
   body.printing-module .top,
-  body.printing-module .back,
+  body.printing-module .page-toolbar,
   body.printing-module .module-tabs,
   body.printing-module .activity-wrap,
-  body.printing-module .module-actions{display:none!important}
-  body.printing-module #app,
+  body.printing-module   body.printing-module #app,
   body.printing-module .topic-page,
   body.printing-module .topic-list{display:block!important;margin:0!important;padding:0!important;max-width:none!important;width:100%!important}
   body.printing-module .module-hero{display:block!important;background:#fff!important;color:#111!important;border:0!important;padding:0 0 12px!important;margin:0 0 18px!important}
@@ -269,7 +273,7 @@ function topicHTML(t){
 function showModule(id){
  currentModule=id;search.value="";
  const m=moduleOf(id),topics=TOPICS.filter(t=>t.module===id);
- app.innerHTML='<main class="topic-page"><button class="back" id="back">← Back to overview</button>'+tabs(id)+'<section class="module-hero"><div class="module-big-code">'+m.code+'</div><div><div class="eyebrow">'+topics.length+' topics · '+progress(m)+'% explored</div><h1>'+esc(m.title)+'</h1><p>'+esc(m.desc)+'</p><div class="module-actions"><button class="btn alt" id="printModule">Print / Save subsection as PDF</button></div></div></section>'+activityFor(id)+'<div class="topic-list">'+topics.map(topicHTML).join("")+'</div></main>';
+ app.innerHTML='<main class="topic-page"><div class="page-toolbar"><button class="back" id="back">← Back to overview</button><button class="pdf-tool" id="printModule" type="button" title="Print or save this subsection as PDF">PDF</button></div>'+tabs(id)+'<section class="module-hero"><div class="module-big-code">'+m.code+'</div><div><div class="eyebrow">'+topics.length+' topics · '+progress(m)+'% explored</div><h1>'+esc(m.title)+'</h1><p>'+esc(m.desc)+'</p></div></section>'+activityFor(id)+'<div class="topic-list">'+topics.map(topicHTML).join("")+'</div></main>';
  document.getElementById("back").onclick=home;
  document.querySelectorAll("[data-tab]").forEach(b=>b.onclick=()=>showModule(b.dataset.tab));
  document.getElementById("printModule").onclick=()=>printModule(id);
